@@ -7,26 +7,40 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 
 ### Crear un volumen tipo host con la imagen nginx:alpine, para la ruta carpeta host: directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html esta ruta se obtiene al revisar la documentación
 ![Volúmenes](imagenes/volumen-host.PNG)
-# COMPLETAR CON EL COMANDO
-
+```
+docker run -d --name mi-contenedor -v D:\Docker\Construction\Practice3\nginx\html:/usr/share/nginx/html -p 80:80 nginx:alpine
+```
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al acceder al servidor nginx mediante `localhost`, aparece un código de estado HTTP "403 Forbidden", que indica que no existe permiso para acceder al recurso solicitado. En otras palabras, el servidor ha entendido la solicitud, pero está denegando el acceso debido a restricciones de autenticación o autorización.
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+El archivo index.html no está presente, lo que causa el error 403.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de nginx/html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al ingresar al servidor de nginx, se muestra la página resultante de los archivos descomprimidos del template seleccionado.
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+```
+docker rm -f mi-contenedor
+```
 
 ### ¿Qué sucede al crear nuevamente el mismo contenedor con volumen de tipo host a los directorios definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Dado que ya existe un archivo index.html al ejecutar
+
+```
+docker run -d --name mi-contenedor -v D:\Docker\Construction\Practice3\nginx\html:/usr/share/nginx/html -p 80:80 nginx:alpine
+```
+
+al acceder al `localhost`, ya aparece la pagina cargada con el template antes seleccionado.
 
 ### ¿Qué hace el comando pwd?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+El comando pwd en sistemas UNIX y derivados, como Linux, muestra el directorio de trabajo actual en la consola.
+
 Si quieres incluir el comando pwd dentro de un comando de Docker, lo puedes hacer de diferentes maneras dependiendo del shell que estés utilizando.
 
 
