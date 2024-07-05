@@ -92,7 +92,7 @@ En el ejemplo con los volumenes creados:
 ```
 
 ### Ingrese al server-drupal y siga el paso a paso para la instalación.
-![drupal setting step 4](images/drupal_step4.png)
+![drupal setting step 4](imagenes/drupal_step4.png)
 
 En el paso 3 ocurrio un error que indica "Drupal no puede escribir en el directorio sites/default/files" porque no tiene permisos adecuados para crearlo automáticamente durante la instalación.
 
